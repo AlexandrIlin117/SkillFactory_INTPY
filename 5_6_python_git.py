@@ -95,7 +95,6 @@ while True:  # Основной цикл;
             print(f"Недопустимое значение!!! Поле {line},{column} Уже занято. Повторите ввод пожайлуста:")
             line = 0
             column = 0
-        # проверка что введены не символы;
         else:
             allowed_field_entered = True
 
