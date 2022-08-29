@@ -212,13 +212,17 @@ class Game:
                     print(
                         f"  Затем через пробел укажите куда строить корабль: U - вверх, D - вниз, L - влево, R - вправо. ")
                     print(f"  Пример правильного ввода: 5 3 U - из поля строка 5 солбец 3 построить корабль вверх.")
+                    print(f"  ВАЖНО !!! Для кораблей с 1 палубой ввод направления не обязателен!")
                     print(f"2_Нельзя ставить корабли рядом символ '*' - запрещённая для установки зона;")
                     print(f"3_Вы можете начать процесс установки заново введя слово - RESET;")
                     target_bild_mba = input(f"Введите через пробел из какого поля сторить корабль "
                                             f"указав сначала строку, а потом столбец ?: ")
+                    if len(target_bild_mba) == 3 and len_ship_mba == 1:
+                        target_bild_mba = target_bild_mba + ' R'
                     if target_bild_mba == "RESET":
                         reset_mba = 1
                         break
+
                     if (len(target_bild_mba) == 5 and target_bild_mba[0].isdigit() and target_bild_mba[1] == " "
                         and target_bild_mba[2].isdigit() and target_bild_mba[3] == " "
                         and target_bild_mba[4].isalpha() and (target_bild_mba[4] == "U"
