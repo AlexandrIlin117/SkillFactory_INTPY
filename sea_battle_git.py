@@ -235,7 +235,9 @@ class Game:
                     if (target_bild_mba[4] == "R" and int(target_bild_mba[2]) + len_ship_mba > 7) \
                             or (target_bild_mba[4] == "L" and int(target_bild_mba[2]) - len_ship_mba < 0) \
                             or (target_bild_mba[4] == "D" and int(target_bild_mba[0]) + len_ship_mba > 7) \
-                            or (target_bild_mba[4] == "U" and int(target_bild_mba[0]) - len_ship_mba < 0):
+                            or (target_bild_mba[4] == "U" and int(target_bild_mba[0]) - len_ship_mba < 0)\
+                            or int(target_bild_mba[2]) <= 0  or int(target_bild_mba[0]) <= 0\
+                            or  int(target_bild_mba[2]) >= 0  or int(target_bild_mba[0]) >= 0:
                         print()
                         print("------------ Нет смысла строить. Корабль выходит за пределы поля. ------------")
                         continue
